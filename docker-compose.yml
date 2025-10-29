@@ -1,0 +1,27 @@
+services:
+  keydb:
+    image: eqalpha/keydb:latest
+    container_name: ann-keydb
+    command: keydb-server /etc/keydb/keydb.conf --requirepass ${KEYDB_PASSWORD} --server-threads 1
+    ports:
+      - "127.0.0.1:6356:6379"
+    networks:
+      - ann-network
+    restart: always
+
+  backend-server:
+    build:
+      context: ./  # path to your local folder (where Dockerfile is)
+      dockerfile: Dockerfile  # optional if named 'Dockerfile'
+    container_name: backend-server
+    ports:
+      - "127.0.0.1:8081:8085"
+    env_file:
+      - ./.env
+    networks:
+      - ann-network
+    restart: always
+
+networks:
+  ann-network:
+    driver: bridge
