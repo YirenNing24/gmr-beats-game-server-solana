@@ -4,6 +4,11 @@
 ## Overview
 GMR Beats Game Server is a high-performance backend for real-time multiplayer rhythm games, built to scale and support innovative gameplay, social features, and secure asset management. Designed for grant programs and open collaboration, it leverages modern technologies for speed, reliability, and extensibility.
 
+## Other Repos
+Godot Game App - https://github.com/YirenNing24/g-metarave-beats
+
+
+
 ## Key Features
 - ⚡ Fast, scalable multiplayer game logic
 - 🎵 Real-time beat and rhythm processing
